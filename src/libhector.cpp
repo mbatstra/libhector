@@ -5,6 +5,7 @@ static OmniBase base;
 
 void hector_init() {
     base.init();
+    base.enable();
 }
 
 void hector_move(float x_mm, float y_mm, float v_mms) {
