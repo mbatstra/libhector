@@ -1,0 +1,21 @@
+{
+  "name": "libhector",
+  "version": "0.1.0",
+  "description": "Hector firmware API",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mbatstra/libhector.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/mbatstra/libhector.git",
+  "dependencies": {
+    "simplefoc/Arduino-FOC": "https://github.com/simplefoc/Arduino-FOC.git",
+    "simplefoc/Arduino-FOC-drivers": "https://github.com/simplefoc/Arduino-FOC-drivers.git",
+  },
+  "frameworks": "arduino",
+  "platforms": "espressif32",
+  "build": {
+    "srcDir": "src",
+    "includeDir": "include"
+  }
+}
