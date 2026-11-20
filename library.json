@@ -10,8 +10,7 @@
   "homepage": "https://github.com/mbatstra/libhector.git",
   "dependencies": {
     "simplefoc/Arduino-FOC": "https://github.com/simplefoc/Arduino-FOC.git",
-    "simplefoc/Arduino-FOC-drivers": "https://github.com/simplefoc/Arduino-FOC-drivers.git",
-    "hideakitai/ArduinoEigen": "^0.3.0"
+    "simplefoc/Arduino-FOC-drivers": "https://github.com/simplefoc/Arduino-FOC-drivers.git"
   },
   "frameworks": "arduino",
   "platforms": "espressif32",
