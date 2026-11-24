@@ -11,7 +11,7 @@
 #include "WiFiType.h"
 
 static const char *ssid = "tcsensors", *pass = "wijvanTCeend";
-static const char *broker = "192.168.68.185";
+static const char *broker = "192.168.68.196";
 static const int port = 1883;
 
 static OmniBase base;
@@ -20,7 +20,8 @@ static WiFiClient wifiClient;
 static MqttClient mqttClient(wifiClient);
 
 static void onMqttMsg(int msg_len) {
-    (void)msg_len;
+  Serial.printf("incoming message with topic: %s and length: %d\n",
+                mqttClient.messageTopic().c_str(), msg_len);
 }
 
 void hector_init() {
@@ -48,7 +49,9 @@ void hector_init() {
         Serial.println("connected to broker");
     }
 
-    mqttClient.onMessage(onMqttMsg)r;
+    mqttClient.onMessage(onMqttMsg);
+    mqttClient.subscribe("FETCH_IP");
+    mqttClient.subscribe("MOVEMENT");
 }
 
 void hector_service() {
@@ -60,7 +63,8 @@ void hector_move(float x_mm, float y_mm, float v_mms) {
 }
 
 bool hector_is_idle() {
-    return base.telemetry().state != OmniCommandState::RUNNING;
+    OmniTelemetry telem = base.telemetry();
+    return telem.seq == 0 || telem.state != OmniCommandState::RUNNING;
 }
 
 void brownian_init(float mean, float stddev, uint32_t seed) {
