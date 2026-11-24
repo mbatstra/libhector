@@ -11,7 +11,7 @@
   "dependencies": {
     "simplefoc/Arduino-FOC": "https://github.com/simplefoc/Arduino-FOC.git",
     "simplefoc/Arduino-FOC-drivers": "https://github.com/simplefoc/Arduino-FOC-drivers.git",
-    "arduino-libraries/ArduinoMqttClient": "https://github.com/arduino-libraries/ArduinoMqttClient.git",
+    "arduino-libraries/ArduinoMqttClient": "https://github.com/arduino-libraries/ArduinoMqttClient.git"
   },
   "frameworks": "arduino",
   "platforms": "espressif32",
